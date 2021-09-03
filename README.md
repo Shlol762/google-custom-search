@@ -1,4 +1,10 @@
+# google-custom-search
+
+[![Downloads](https://pepy.tech/badge/google-custom-search)](https://pepy.tech/project/google-custom-search)
+
 # How to use this package.
+
+## Next version can search image.
 
 ## first please install this package
 ```bash

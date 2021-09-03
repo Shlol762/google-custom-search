@@ -4,9 +4,8 @@ class ImageError(Exception):
   pass
 
 class result(object):
-  def __init__(self, api, image=False, **kwarg):
+  def __init__(self, api, **kwarg):
     self.api=api
-    self.image=image
     
   @property
   def titles(self):

@@ -1,12 +1,18 @@
 Metadata-Version: 2.1
 Name: google-custom-search
-Version: 0.1.0
+Version: 0.1.3
 Summary: This is for google custom search api.
 Home-page: https://github.com/tuna2134/google-custom-search
 Author: DMS
 Author-email: masato190411@gmail.com
 License: UNKNOWN
-Description: # How to use this package.
+Description: # google-custom-search
+        
+        [![Downloads](https://pepy.tech/badge/google-custom-search)](https://pepy.tech/project/google-custom-search)
+        
+        # How to use this package.
+        
+        ## Next version can search image.
         
         ## first please install this package
         ```bash

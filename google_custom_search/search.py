@@ -50,4 +50,4 @@ class custom_search(object):
       async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params) as res:
           api=await res.json()
-          return result(api, self.image)
+          return result(api)

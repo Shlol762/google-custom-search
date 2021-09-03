@@ -21,7 +21,7 @@ class custom_search(object):
     if engine_id is None:
       raise Engine_IdError("engine_id is invaid")
     else: 
-      self.token=token
+      self.token=apikey
       self.engine_id=engine_id
       self.image=image
 
@@ -50,4 +50,4 @@ class custom_search(object):
       async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params) as res:
           api=await res.json()
-          return result(api, self.image)
+          return result(api)
