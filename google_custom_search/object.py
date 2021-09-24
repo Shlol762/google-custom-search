@@ -3,9 +3,17 @@ import json
 class ImageError(Exception):
   pass
 
+
+class ApiNotEnabled(Exception):
+  def __init__(self, code: str, error: str):
+    super().__init__(f"Error ({code}): {error}")
+
+
 class result(object):
   def __init__(self, api, **kwarg):
-    self.api=api
+    self.api: dict =api
+    if self.api.get('error'):
+      raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
     
   @property
   def titles(self):
