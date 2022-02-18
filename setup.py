@@ -8,7 +8,7 @@ def _requires_from_file(filename):
 
 setuptools.setup(
     name="google-custom-search",
-    version="0.1.3",
+    version="0.2.0",
     author="DMS",
     author_email="masato190411@gmail.com",
     description="This is for google custom search api.",
