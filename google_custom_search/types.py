@@ -6,21 +6,21 @@ class Item(object):
         self.data: dict = data
     
     @property
-    def title(self):
+    def title(self) -> str:
         return self.data["title"]
     
     @property
-    def url(self):
+    def url(self) -> str:
         return self.data["link"]
     
     @property
-    def display_url(self):
+    def display_url(self) -> str:
         return self.data["displayLink"]
     
     @property
-    def html_title(self):
+    def html_title(self) -> str:
         return self.data["htmlTitle"]
     
     @property
-    def snippet(self):
+    def snippet(self) -> str:
         return self.data["snippet"]
