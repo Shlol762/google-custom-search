@@ -1,6 +1,5 @@
-class ImageError(Exception):
+class AsyncError(Exception):
     pass
-
 
 class ApiNotEnabled(Exception):
     def __init__(self, code: str, error: str):
