@@ -9,12 +9,7 @@ else:
 from .object import result
 from typing import Optional
 from .errors import ApiNotEnabled
-
-class ApiError(Exception):
-    pass
-
-class AsyncError(Exception):
-    pass
+from .types import Item
 
 class custom_search(object):
     APIURL = "https://www.googleapis.com/customsearch/v1"
@@ -34,7 +29,7 @@ class custom_search(object):
             "q": keyword
         }
         res = requests.get(self.APIURL,params=params)
-        return result(res.json())
+        return self._from_dict(res.json())
     
     def _from_dict(self, data):
         if data.get('error'):
@@ -52,4 +47,4 @@ class custom_search(object):
         }
         async with aiohttp.ClientSession() as session:
             async with session.get(self.APIURL, params=params) as res:
-                return result(await res.json())
+                return self._from_dict(await res.json())
