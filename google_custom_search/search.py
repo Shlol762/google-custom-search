@@ -4,8 +4,6 @@ import json
 from .object import result
 from typing import Optional
 
-url = "https://www.googleapis.com/customsearch/v1"
-
 class ApiError(Exception):
     pass
 
@@ -15,7 +13,9 @@ class Engine_IdError(Exception):
 class TokenError(Exception):
     pass
 
-class custom_search(object): 
+class custom_search(object):
+    APIURL = "https://www.googleapis.com/customsearch/v1"
+    
     def __init__(self,
                  apikey: str,
                  engine_id: str,
@@ -30,7 +30,7 @@ class custom_search(object):
             "cx": self.engine_id,
             "q": keyword
         }
-        res = requests.get(url,params=params)
+        res = requests.get(self.APIURL,params=params)
         return result(res.json())
       
     async def search_async(self, keyword:str) -> result:
@@ -40,5 +40,5 @@ class custom_search(object):
             "q": keyword
         }
         async with aiohttp.ClientSession() as session:
-            async with session.get(url, params=params) as res:
+            async with session.get(self.APIURL, params=params) as res:
                 return result(await res.json())
