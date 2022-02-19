@@ -6,7 +6,6 @@ except:
 else:
     no_async = False
     
-from .object import result
 from typing import Optional
 from .errors import ApiNotEnabled, AsyncError
 from .types import Item
