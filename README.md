@@ -32,15 +32,13 @@ for result in results:
     print(result.url)
   
     # get a displayLink.
-    print(result.displaylink)
+    print(result.display_url)
 
-# get a list of htmlTitle.
-for i in result.html_titles:
-    print(i)
+    # get a htmlTitle.
+    print(result.html_title)
   
-# get a list of snippet.
-for i in result.snippets:
-    print(i)
+    # get a snippet.
+    print(result.snippet)
 ```
 
 ## sample code async version
@@ -53,16 +51,21 @@ google = google_custom_search.custom_search(token="your api_key", engine_id="you
 
 async def main():
     result = await google.search_async("word!")
-    for i in result.titles:
-        print(i)
-    for i in result.urls:
-        print(i)
-    for i in result.display_urls:
-        print(i)
-    for i in result.html_titles:
-        print(i)
-    for i in result.snippets:
-        print(i)
+    for result in results:
+        # get a title.
+        print(result.title)
+  
+        # get a link.
+        print(result.url)
+  
+        # get a displayLink.
+        print(result.display_url)
+
+        # get a htmlTitle.
+        print(result.html_title)
+  
+        # get a snippet.
+        print(result.snippet)
     
 loop = asyncio.get_event_loop() 
 loop.run_until_complete(main())
