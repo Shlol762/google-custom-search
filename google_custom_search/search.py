@@ -1,16 +1,18 @@
 import requests
-import aiohttp
-import json
+try:
+    import aiohttp
+except:
+    no_async = True
+else:
+    no_async = False
+    
 from .object import result
 from typing import Optional
 
 class ApiError(Exception):
     pass
 
-class Engine_IdError(Exception):
-    pass
-
-class TokenError(Exception):
+class AsyncError(Exception):
     pass
 
 class custom_search(object):
@@ -34,6 +36,8 @@ class custom_search(object):
         return result(res.json())
       
     async def search_async(self, keyword:str) -> result:
+        if no_async:
+            raise AsyncError("This library can't use aiohttp. Please install aiohttp")
         params={
             "key": self.token,
             "cx": self.engine_id,
