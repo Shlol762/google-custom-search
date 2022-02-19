@@ -8,6 +8,7 @@ else:
     
 from .object import result
 from typing import Optional
+from .errors import ApiNotEnabled
 
 class ApiError(Exception):
     pass
@@ -34,6 +35,12 @@ class custom_search(object):
         }
         res = requests.get(self.APIURL,params=params)
         return result(res.json())
+    
+    def _from_dict(self, data):
+        if data.get('error'):
+            raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
+        else:
+            return [Item(i) for i in data["items"]]
       
     async def search_async(self, keyword:str) -> result:
         if no_async:
