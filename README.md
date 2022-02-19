@@ -22,19 +22,17 @@ import google_custom_search
 google = google_custom_search.custom_search(apikey="your api_key", engine_id="your engine_id")
 # if image is True, it's can search, but you need to setting at google console search
 
-result = google.search("Hello")
+results = google.search("Hello")
 
-# get a list of title.
-for title in result.titles:
-    print(title)
+for result in results:
+    # get a title.
+    print(result.title)
   
-# get a list of link.
-for url in result.urls:
-    print(url)
+    # get a link.
+    print(result.url)
   
-# get a list of displayLink.
-for i in result.display_urls:
-    print(i)
+    # get a displayLink.
+    print(result.displaylink)
 
 # get a list of htmlTitle.
 for i in result.html_titles:
