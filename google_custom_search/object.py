@@ -11,7 +11,7 @@ class ApiNotEnabled(Exception):
 
 class result(object):
     def __init__(self, api, **kwarg):
-        self.api: dict =api
+        self.api: dict = api
         if self.api.get('error'):
             raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
     
