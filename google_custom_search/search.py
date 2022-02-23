@@ -1,7 +1,7 @@
 import requests
 try:
     import aiohttp
-except:
+except ImportError:
     no_async = True
 else:
     no_async = False
