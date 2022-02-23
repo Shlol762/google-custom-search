@@ -6,7 +6,7 @@ except:
 else:
     no_async = False
     
-from typing import Optional
+from typing import Optional, List
 from .errors import ApiNotEnabled, AsyncError
 from .types import Item
 
@@ -21,7 +21,7 @@ class custom_search(object):
         self.engine_id = engine_id
         self.image = image
 
-    def search(self, keyword: str) -> Item:
+    def search(self, keyword: str) -> List[Item]:
         params={
             "key": self.token,
             "cx": self.engine_id,
@@ -30,13 +30,13 @@ class custom_search(object):
         res = requests.get(self.APIURL, params=params)
         return self._from_dict(res.json())
     
-    def _from_dict(self, data) -> Item:
+    def _from_dict(self, data) -> List[Item]:
         if data.get('error'):
             raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
         else:
             return [Item(i) for i in data["items"]]
       
-    async def search_async(self, keyword: str) -> Item:
+    async def search_async(self, keyword: str) -> List[Item]:
         if no_async:
             raise AsyncError("This library can't use aiohttp. Please install aiohttp")
         params={
