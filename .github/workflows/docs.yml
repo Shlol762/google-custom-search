@@ -1,0 +1,26 @@
+name: create document
+
+on:
+  release:
+    types: [created]
+      
+jobs:
+  change:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+          
+      - name: install lib
+        run: |
+          pip install sphinx sphinx_rtd_theme
+          
+      - name: change
+        run: |
+          cd docs
+          make html
