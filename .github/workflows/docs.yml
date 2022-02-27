@@ -24,3 +24,13 @@ jobs:
         run: |
           cd docs
           make html
+
+      - name: Commit and Push
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "tuna2134"
+          git config --global user.email "masato190411@gmail.com"
+          git add .
+          git commit -m "add document"
+          git checkout -b main
+          git push origin main
