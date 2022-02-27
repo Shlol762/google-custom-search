@@ -1,6 +1,6 @@
 # google-custom-search
 
-[![Downloads](https://pepy.tech/badge/google-custom-search)](https://pepy.tech/project/google-custom-search)
+[![Downloads](https://pepy.tech/badge/google-custom-search)](https://pepy.tech/project/google-custom-search) [![Documentation Status](https://readthedocs.org/projects/google-custom-search/badge/?version=latest)](https://google-custom-search.readthedocs.io/en/latest/?badge=latest)
 
 # How to use this package.
 
