@@ -12,11 +12,10 @@ This is api library.
    :caption: Contents:
    
    quickstart
+   google_custom_search
 
 
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+PYPI: <https://pypi.org/project/google-custom-search/>
