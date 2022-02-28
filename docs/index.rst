@@ -13,7 +13,6 @@ This is api library.
    
    quickstart
 
-
 Indices and tables
 ==================
 
