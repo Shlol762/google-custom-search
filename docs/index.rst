@@ -12,6 +12,7 @@ This is api library.
    :caption: Contents:
    
    quickstart
+   google_custom_search
 
 Indices and tables
 ==================
