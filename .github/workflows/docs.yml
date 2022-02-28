@@ -22,6 +22,7 @@ jobs:
           
       - name: change
         run: |
+          sphinx-apidoc -f -o /docs/google_custom_search ./google-custom-search
           cd docs
           make html
 
