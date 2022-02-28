@@ -5,11 +5,13 @@
 
 Welcome to google-custom-search's documentation!
 ================================================
+This is api library.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   quickstart
 
 
 Indices and tables
