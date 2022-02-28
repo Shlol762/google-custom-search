@@ -38,6 +38,7 @@ class custom_search(object):
         return self._from_dict(res.json())
     
     def _from_dict(self, data) -> List[Item]:
+        """This is used to convert the json data to Item."""
         if data.get('error'):
             raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
         else:
