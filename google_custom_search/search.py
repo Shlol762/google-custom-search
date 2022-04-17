@@ -29,7 +29,7 @@ class custom_search(object):
         """This is searched using api.
         
         keyword: str"""
-        params={
+        params = {
             "key": self.token,
             "cx": self.engine_id,
             "q": keyword
@@ -37,8 +37,8 @@ class custom_search(object):
         res = requests.get(self.APIURL, params=params)
         return self._from_dict(res.json())
     
-    def _from_dict(self, data) -> List[Item]:
-        """This is used to convert the json data to Item."""
+    def _from_dict(self, data: dict) -> List[Item]:
+        "This is used to convert the json data to Item."
         if data.get('error'):
             raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
         else:
@@ -53,7 +53,7 @@ class custom_search(object):
         """
         if no_async:
             raise AsyncError("This library can't use aiohttp. Please install aiohttp")
-        params={
+        params = {
             "key": self.token,
             "cx": self.engine_id,
             "q": keyword
