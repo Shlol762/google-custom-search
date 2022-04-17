@@ -1,3 +1,5 @@
+__all__ = ("AsyncError", "ApiNotEnabled")
+
 class AsyncError(Exception):
     pass
 
