@@ -2,7 +2,7 @@ __all__ = ("Item")
 import json
 
 
-class Item(object):
+class Item:
     """This is return a item."""
     def __init__(self, data, **kwargs):
         self.data: dict = data
