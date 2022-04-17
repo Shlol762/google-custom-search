@@ -10,7 +10,7 @@ from typing import Optional, List
 from .errors import ApiNotEnabled, AsyncError
 from .types import Item
 
-class custom_search(object):
+class custom_search:
     """This is the class used when using Google Custom Search.
     
     apikey: str
