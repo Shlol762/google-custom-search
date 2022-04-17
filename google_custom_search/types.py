@@ -5,6 +5,10 @@ class Item(object):
     """This is return a item."""
     def __init__(self, data, **kwargs):
         self.data: dict = data
+            
+    @property
+    def kind(self) -> str:
+        return self.data["kind"]
     
     @property
     def title(self) -> str:
