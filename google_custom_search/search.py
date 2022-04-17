@@ -1,3 +1,4 @@
+__all__ = ("custom_search")
 import requests
 try:
     import aiohttp
