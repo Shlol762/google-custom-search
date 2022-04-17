@@ -14,7 +14,7 @@ extras_require = {
 
 setuptools.setup(
     name="google-custom-search",
-    version="2.0.3",
+    version="2.0.4",
     author="DMS",
     author_email="masato190411@gmail.com",
     description="This is for google custom search api.",
