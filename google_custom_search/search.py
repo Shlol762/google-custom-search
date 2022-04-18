@@ -14,8 +14,10 @@ from .types import Item
 class custom_search:
     """This is the class used when using Google Custom Search.
     
-    apikey: str
-    engine_id: str"""
+    Args:
+        apikey (str): Insert google custom search api key.
+        engine_id (str): Insert google custom search engine id.
+    """
     APIURL = "https://www.googleapis.com/customsearch/v1"
     
     def __init__(self,
@@ -29,7 +31,12 @@ class custom_search:
     def search(self, keyword: str) -> List[Item]:
         """This is searched using api.
         
-        keyword: str"""
+        Args:
+            keyword (str): Search word
+            
+        Returns:
+            List[Item]: return result
+        """
         params = {
             "key": self.token,
             "cx": self.engine_id,
@@ -48,9 +55,14 @@ class custom_search:
     async def search_async(self, keyword: str) -> List[Item]:
         """This is an asynchronous version of custom_search.search.
         
-        :::tips
-        You need aiohttp library.
-        :::
+        Args:
+            keyword (str): Search word
+            
+        Returns:
+            List[Item]: return result
+        
+        Note:
+            You need aiohttp library.
         """
         if no_async:
             raise AsyncError("This library can't use aiohttp. Please install aiohttp")
