@@ -11,3 +11,19 @@ google_custom_search.search module
    :members:
    :undoc-members:
    :show-inheritance:
+
+google_custom_search.types module
+--------------------
+
+.. automodule:: google_custom_search.types
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+google_custom_search module
+--------------------
+
+.. automodule:: google_custom_search
+   :members:
+   :undoc-members:
+   :show-inheritance:
