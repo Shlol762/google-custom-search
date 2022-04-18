@@ -66,6 +66,7 @@ class custom_search:
             
         Raises:
             ApiNotEnabled: api is not invalid
+            AsyncError: If you don't install aiohttp, lib call error.
         
         Note:
             You need aiohttp library.
