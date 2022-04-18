@@ -22,7 +22,7 @@ copyright = '2022, dms'
 author = 'dms'
 
 # The full version, including alpha/beta/rc tags
-release = '2.0.0a'
+release = '2.0.4'
 
 
 # -- General configuration ---------------------------------------------------
