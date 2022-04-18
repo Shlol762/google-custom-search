@@ -20,10 +20,10 @@ google_custom_search.types module
    :undoc-members:
    :show-inheritance:
    
-google_custom_search module
+google_custom_search.errors module
 --------------------
 
-.. automodule:: google_custom_search
+.. automodule:: google_custom_search.errors
    :members:
    :undoc-members:
    :show-inheritance:
