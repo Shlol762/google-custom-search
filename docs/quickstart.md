@@ -3,7 +3,8 @@
 ## install
 
 ```bash
-pip install google-custom-search```
+pip install google-custom-search
+```
 
 ## sample
 
