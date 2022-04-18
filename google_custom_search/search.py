@@ -36,6 +36,9 @@ class custom_search:
             
         Returns:
             List[Item]: return result
+        
+        Raises:
+            ApiNotEnabled: api is not invalid
         """
         params = {
             "key": self.token,
@@ -60,6 +63,9 @@ class custom_search:
             
         Returns:
             List[Item]: return result
+            
+        Raises:
+            ApiNotEnabled: api is not invalid
         
         Note:
             You need aiohttp library.
