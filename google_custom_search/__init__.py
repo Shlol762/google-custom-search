@@ -1,4 +1,4 @@
-__version__ = "2.0.4"
+__version__ = "2.0.5a"
 
 from .search import *
 from .types import *
