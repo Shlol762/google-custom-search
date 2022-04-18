@@ -6,6 +6,12 @@
 pip install google-custom-search
 ```
 
+or if you use async version, please run this.
+
+```bash
+pip install google-custom-search[async]
+```
+
 ## sample
 
 ### sync
