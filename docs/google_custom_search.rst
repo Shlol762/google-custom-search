@@ -4,10 +4,10 @@ google-custom-search library
 Submodules
 ----------
 
-google-custom-search.search module
+google_custom_search.search module
 --------------------
 
-.. automodule:: google-custom-search.search
+.. automodule:: google_custom_search.search
    :members:
    :undoc-members:
    :show-inheritance:
