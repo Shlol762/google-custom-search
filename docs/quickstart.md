@@ -22,6 +22,9 @@ google = google_custom_search.custom_search(apikey="your api_key", engine_id="yo
 # if image is True, it's can search, but you need to setting at google console search
 results = google.search("Hello")
 for result in results:
+    # get a kind
+    print(result.kind)
+    
     # get a title.
     print(result.title)
   
@@ -30,6 +33,7 @@ for result in results:
   
     # get a displayLink.
     print(result.display_url)
+    
     # get a htmlTitle.
     print(result.html_title)
   
@@ -47,6 +51,9 @@ google = google_custom_search.custom_search(token="your api_key", engine_id="you
 async def main():
     result = await google.search_async("word!")
     for result in results:
+        # get a kind
+        print(result.kind)
+        
         # get a title.
         print(result.title)
   
@@ -55,6 +62,7 @@ async def main():
   
         # get a displayLink.
         print(result.display_url)
+        
         # get a htmlTitle.
         print(result.html_title)
   
