@@ -53,7 +53,7 @@ google = google_custom_search.custom_search(token="your api_key", engine_id="you
 # if image is True, it's can search, but you need to setting at google console search
 
 async def main():
-    result = await google.search_async("word!")
+    results = await google.search_async("word!")
     for result in results:
         # get a title.
         print(result.title)
