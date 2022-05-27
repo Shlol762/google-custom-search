@@ -14,7 +14,7 @@ def _get_version(filename):
         if "__version__" in line:
             version = line.split()[2]
             break
-    return version
+    return version.replace('"', '')
 
 extras_require = {
     "async": [
