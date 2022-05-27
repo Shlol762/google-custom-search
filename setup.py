@@ -6,6 +6,17 @@ with open("README.md", "r") as fh:
 def _requires_from_file(filename):
     return open(filename, encoding="utf8").read().splitlines()
 
+def _get_version(filename):
+    with open(filename, "r") as f:
+        lines = f.readlines()
+    version = None
+    for line in lines:
+        if "__version__" in line:
+            version = line.split()[2]
+            break
+    print(version)
+    return version
+
 extras_require = {
     "async": [
         "aiohttp>=3.8.1"
@@ -14,7 +25,7 @@ extras_require = {
 
 setuptools.setup(
     name="google-custom-search",
-    version="2.0.5a",
+    version=_get_version("google_custom_search/__init__.py"),
     author="DMS",
     author_email="masato190411@gmail.com",
     description="This is for google custom search api.",
