@@ -1,4 +1,4 @@
-__version__ = "2.0.5a"
+__version__ = "2.0.5"
 # __all__ = ("AsyncError", "ApiNotEnabled", "custom_search", "Item")
 
 from .search import *
