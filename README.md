@@ -72,3 +72,32 @@ async def main():
     
 asyncio.run(main())
 ```
+
+or
+
+```py
+import asyncio
+import google_custom_search
+
+google = google_custom_search.CustomSearch(token="your api_key", engine_id="your engine_id", image=True)
+# if image is True, it's can search, but you need to setting at google console search
+
+async def main():
+    async for item in google.search_async_iterator("word!"):
+        # get a title.
+        print(item.title)
+  
+        # get a link.
+        print(item.url)
+  
+        # get a displayLink.
+        print(item.display_url)
+
+        # get a htmlTitle.
+        print(item.html_title)
+  
+        # get a snippet.
+        print(item.snippet)
+    
+asyncio.run(main())
+```
