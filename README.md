@@ -22,7 +22,7 @@ pip install google-custom-search[async]
 ```py
 import google_custom_search
 
-google = google_custom_search.custom_search(apikey="your api_key", engine_id="your engine_id")
+google = google_custom_search.CustomSearch(apikey="your api_key", engine_id="your engine_id")
 # if image is True, it's can search, but you need to setting at google console search
 
 results = google.search("Hello")
@@ -49,7 +49,7 @@ for result in results:
 import asyncio
 import google_custom_search
 
-google = google_custom_search.custom_search(token="your api_key", engine_id="your engine_id", image=True)
+google = google_custom_search.CustomSearch(token="your api_key", engine_id="your engine_id", image=True)
 # if image is True, it's can search, but you need to setting at google console search
 
 async def main():
