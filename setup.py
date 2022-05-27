@@ -14,7 +14,6 @@ def _get_version(filename):
         if "__version__" in line:
             version = line.split()[2]
             break
-    print(version)
     return version
 
 extras_require = {
