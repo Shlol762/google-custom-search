@@ -70,6 +70,5 @@ async def main():
         # get a snippet.
         print(result.snippet)
     
-loop = asyncio.get_event_loop() 
-loop.run_until_complete(main())
+asyncio.run(main())
 ```
