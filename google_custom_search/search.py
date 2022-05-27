@@ -6,7 +6,7 @@ except ImportError:
 else:
     no_async = False
     
-from typing import Optional, List
+from typing import Optional, List, AsyncIterator
 from .errors import ApiNotEnabled, AsyncError
 from .types import Item
 
@@ -54,6 +54,10 @@ class CustomSearch:
             raise ApiNotEnabled(self.api['error']['code'], self.api['error']['message'])
         else:
             return [Item(i) for i in data["items"]]
+        
+    async def search_async_iterator(self, keyword: str) -> AsyncIterator[Item]:
+        for item in (await self.search_async(keyword)):
+            yield item
       
     async def search_async(self, keyword: str) -> List[Item]:
         """This is an asynchronous version of custom_search.search.
