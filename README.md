@@ -40,7 +40,7 @@ for result in results:
     print(result.snippet)
 ```
 
-## sample code async version
+## Sample code async version
 ```py
 import asyncio
 import google_custom_search
