@@ -30,7 +30,7 @@ setuptools.setup(
     description="This is for google custom search api.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/tuna2134/google-custom-search",
+    url="https://github.com/mc-fdc-dev/google-custom-search",
     install_requires=_requires_from_file('requirements.txt'),
     extras_require=extras_require,
     packages=setuptools.find_packages(),
