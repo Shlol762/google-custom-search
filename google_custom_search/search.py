@@ -55,7 +55,7 @@ class CustomSearch:
         else:
             return [Item(i) for i in data["items"]]
         
-    async def search_async_iterator(self, keyword: str) -> AsyncIterator[Item]:
+    async def search_async_iterator(self, *args, **kwargs) -> AsyncIterator[Item]:
         """It's like search_async, but this is iterator
         
         Args:
@@ -67,7 +67,7 @@ class CustomSearch:
         Note:
             You need aiohttp library.
         """
-        for item in (await self.search_async(keyword)):
+        for item in (await self.search_async(*args, **kwargs)):
             yield item
       
     async def search_async(self, keyword: str) -> List[Item]:
