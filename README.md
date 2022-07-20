@@ -5,11 +5,7 @@
 [![Downloads](https://pepy.tech/badge/google-custom-search/week)](https://pepy.tech/project/google-custom-search)
 [![Documentation Status](https://readthedocs.org/projects/google-custom-search/badge/?version=latest)](https://google-custom-search.readthedocs.io/en/latest/?badge=latest)
 
-# How to use this package.
-
-## Next version can search image.
-
-## first please install this package
+## Install
 ```bash
 pip install google-custom-search
 ```
@@ -18,7 +14,7 @@ or if you want use async/await, please install.
 pip install google-custom-search[async]
 ```
 
-## sample code
+## Sample code
 ```py
 import google_custom_search
 
