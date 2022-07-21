@@ -70,11 +70,13 @@ class CustomSearch:
         for item in (await self.search_async(*args, **kwargs)):
             yield item
       
-    async def search_async(self, keyword: str) -> List[Item]:
+    async def search_async(self, q: str, *, safe: bool = False,
+                           filter: bool = True) -> List[Item]:
         """This is an asynchronous version of custom_search.search.
         
         Args:
-            keyword (str): Search word
+            q (str): Search word
+            safe (bool): Safe search mode
             
         Returns:
             List[Item]: return result
@@ -88,11 +90,15 @@ class CustomSearch:
         """
         if no_async:
             raise AsyncError("This library can't use aiohttp. Please install aiohttp")
-        params = {
+        payload = {
             "key": self.token,
             "cx": self.engine_id,
-            "q": keyword
+            "q": q
         }
+        if safe:
+            payload["safe"] = "active"
+        if not filter:
+            payload["filter"] = 0
         async with aiohttp.ClientSession() as session:
-            async with session.get(self.APIURL, params=params) as res:
+            async with session.get(self.APIURL, params=payload) as res:
                 return self._from_dict(await res.json())
