@@ -100,5 +100,5 @@ class CustomSearch:
         """
         if no_async:
             raise AsyncError("This function use aiohttp, so please install aiohttp.")
-        async with session.get(self.APIURL, params=self._payload_maker(*args, **kwargs)) as res:
+        async with self.session.get(self.APIURL, params=self._payload_maker(*args, **kwargs)) as res:
             return self._from_dict(await res.json())
