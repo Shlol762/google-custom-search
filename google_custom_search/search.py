@@ -20,7 +20,6 @@ class CustomSearch:
         aiohttp_options (dict): Custom aiohttp option.
     """
     APIURL = "https://www.googleapis.com/customsearch/v1"
-    session: Optional[ClientSession] = None
     
     def __init__(
         self, apikey: str, engine_id: str,
@@ -30,6 +29,8 @@ class CustomSearch:
         self.engine_id = engine_id
         if not no_async:
             self.session = ClientSession(**aiohttp_options)
+        else:
+            self.session = None
 
     def _payload_maker(
         self, q: str, *,
