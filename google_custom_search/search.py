@@ -19,7 +19,7 @@ class CustomSearch:
         engine_id (str): Insert google custom search engine id.
         aiohttp_options (dict): Custom aiohttp option.
     """
-    APIURL = "https://www.googleapis.com/customsearch/v1"
+    APIURL: str = "https://www.googleapis.com/customsearch/v1"
     
     def __init__(
         self, apikey: str, engine_id: str,
