@@ -28,7 +28,6 @@ class CustomSearch:
     ):
         self.apikey = apikey
         self.engine_id = engine_id
-        self.image = image
         if not no_async:
             self.session = ClientSession(**aiohttp_options)
 
