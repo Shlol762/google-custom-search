@@ -22,7 +22,7 @@ class Lang(Enum):
     IW = "lang_iw"
     JA = "lang_ja"
     KO = "lang_ko"
-    LT = "lang_lt
+    LT = "lang_lt"
     LV = "lang_lv"
     NL = "lang_nl"
     NO = "lang_no"
