@@ -1,0 +1,21 @@
+name: Deploy docs to Github Pages
+
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.10
+      - name: Build pages
+        working-directory: ./docs
+        run: |
+          pip install -r requirements.txt
+          make html
