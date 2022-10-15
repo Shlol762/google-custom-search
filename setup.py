@@ -25,7 +25,7 @@ extras_require = {
 setuptools.setup(
     name="google-custom-search",
     version=_get_version("google_custom_search/__init__.py"),
-    author="DMS",
+    author="mc-fdc-dev",
     author_email="masato190411@gmail.com",
     description="This is for google custom search api.",
     long_description=long_description,
