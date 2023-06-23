@@ -25,20 +25,20 @@ class custom_search(object):
       self.engine_id=engine_id
       self.image=image
 
-  def search(self, keyword=None):
+  def search(self, search_params = {}, keyword=None):
     if keyword is None:
       raise KeywordError("keyword is None")
     else:
       params={
-        "key": self.token,
-        "cx": self.engine_id,
-        "q": keyword
-      }
+          "key": self.token,
+          "cx": self.engine_id,
+          "q": keyword
+        }.update(search_params)
       res=requests.get(url,params=params)
       api=res.json()
       return result(api)
       
-  async def search_async(self, keyword=None):
+  async def search_async(self, search_params = {}, keyword=None):
     if keyword is None:
       raise KeywordError("keyword is None")
     else:
@@ -46,7 +46,7 @@ class custom_search(object):
         "key": self.token,
         "cx": self.engine_id,
         "q": keyword
-      }
+      }.update(search_params)
       async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params) as res:
           api=await res.json()
