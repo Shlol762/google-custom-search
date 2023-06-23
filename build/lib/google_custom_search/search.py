@@ -25,10 +25,10 @@ class custom_search(object):
       self.engine_id=engine_id
       self.image=image
 
-  def search(self,search_params = {},keyword=None):
+  def search(self, search_params = {}, keyword=None):
     if keyword is None:
       raise KeywordError("keyword is None")
-    else: 
+    else:
       params={
           "key": self.token,
           "cx": self.engine_id,
@@ -38,7 +38,7 @@ class custom_search(object):
       api=res.json()
       return result(api)
       
-  async def search_async(self,search_params = {}, keyword=None):
+  async def search_async(self, search_params = {}, keyword=None):
     if keyword is None:
       raise KeywordError("keyword is None")
     else:
